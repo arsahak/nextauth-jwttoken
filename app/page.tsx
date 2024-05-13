@@ -1,6 +1,8 @@
 "use client";
 
 import Button from "@elements/Button";
+import ImageUpload from "components/ImageUpload";
+import NewsBlog from "components/NewsBlog";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 
@@ -21,6 +23,14 @@ const HomePage = () => {
     <div>
       <Button onClick={fetchPost}>Get User Posts</Button>
       {posts && JSON.stringify(posts)}
+      <div className="mt-10 ml-10 flex">
+        <div className="flex-1">
+          <ImageUpload/>
+        </div>
+        <div className="flex-1">
+          <NewsBlog/>
+        </div>
+      </div>
     </div>
   );
 };
